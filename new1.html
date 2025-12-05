@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CM to Inches Converter</title>
+
+  <style>
+    body {
+      background: #0f1724;
+      font-family: Arial;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: #1e293b;
+      padding: 30px;
+      width: 300px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 12px;
+      padding: 8px;
+      width: 48%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #93c5fd;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h2>CM → Inches</h2>
+
+    <input type="number" id="num1" placeholder="Enter CM">
+
+    <br><br>
+
+    <button onclick="calculate()">Convert</button>
+    <button onclick="clearOutput()">Clear</button>
+
+    <div class="result" id="sum-result"></div>
+  </div>
+
+  <script>
+
+    function calculate() {
+      const input1 = document.getElementById("num1");
+      const resultElement = document.getElementById("sum-result");
+
+      const cm = parseFloat(input1.value);
+
+      const inches = cm / 2.54;
+
+      resultElement.innerText = cm + " cm = " + inches.toFixed(2) + " inches";
+    }
+
+    function clearOutput() {
+      const input1 = document.getElementById("num1");
+      const resultElement = document.getElementById("sum-result");
+
+      input1.value = "";
+      resultElement.innerText = "";
+    }
+
+  </script>
+
+</body>
+</html>
